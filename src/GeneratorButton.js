@@ -12,7 +12,7 @@ const btnGenerator = {
 
 const GeneratorButton = (props) => {
      return (
-     	<button style={btnGenerator} onClick={() => props.onClick(props.word)}>Generate!</button>
+     	<button style={btnGenerator} onClick={() => props.onClick()}>Generate!</button>
         
     )
 }

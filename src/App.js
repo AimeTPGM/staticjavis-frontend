@@ -24,16 +24,40 @@ const mainStyle = {
 }
 
 class App extends Component {
-  sendReq = () => {
-    alert(this.state.text)
-  }
-
   handleChange = (e) => {
     console.log(e.target.value) 
     this.setState ({text: e.target.value})
   }
 
-state = {text: "get /yang-mai-set\nlisten 3000"}
+  sendReq = async () => {
+    const res = await fetch('http://localhost:3001/gen/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "programmingLanguage" : "js",
+        "project": "test",
+        "keywords" : [
+          {
+            "keyword" : "get",
+            "param" : "/test"
+          },
+          {
+            "keyword" : "post",
+            "param" : "/lol"
+          },
+          {
+            "keyword" : "listen",
+            "param" : "3000"
+          }
+        ]
+      })
+    })
+    console.log(await res.text())
+  }
+
+state = {text: "get /test\npost /lol\nlisten 3000"}
 
   render() {
     return (
