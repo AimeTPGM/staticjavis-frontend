@@ -18,11 +18,15 @@ class App extends Component {
         <p className="App-intro">
           To got started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <MyButton onClick={this.handleClick} word={'dfghjhgfhgfgf'} name={'ArMSe'}/>
 
-        <MyButton name={'Aim'}/>
+        <div class="btn-group">
+          <MyButton onClick={this.handleClick} word={'Arm'} name={'ArMSe'}/>
+          <MyButton onClick={this.handleClick} word={'Aim'} name={'Aim'}/>
+          <MyButton onClick={this.handleClick} word={'Fon'} name={'Fon'}/>
+        </div> 
 
-        <MyButton name={'Fon'}/>
+        <textarea name="txtFolderName" rows="1"></textarea>
+
       </div>
     );
   }
